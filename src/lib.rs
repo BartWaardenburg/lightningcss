@@ -19125,6 +19125,9 @@ mod tests {
     minify_test(".foo { color: hsl(100 100% 50%) }", ".foo{color:#5f0}");
     minify_test(".foo { color: hsl(100 100 50) }", ".foo{color:#5f0}");
     minify_test(".foo { color: hsl(100, 100%, 50%, .8) }", ".foo{color:#5f0c}");
+    minify_test(".foo { color: hsl(calc(infinity) 100% 50%) }", ".foo{color:red}");
+    minify_test(".foo { color: hsl(calc(-infinity) 100% 50%) }", ".foo{color:red}");
+    minify_test(".foo { color: hsl(188744750 100% 50%) }", ".foo{color:#f02}");
     minify_test(".foo { color: hsl(100 100% 50% / .8) }", ".foo{color:#5f0c}");
     minify_test(".foo { color: hsla(100, 100%, 50%, .8) }", ".foo{color:#5f0c}");
     minify_test(".foo { color: hsla(100 100% 50% / .8) }", ".foo{color:#5f0c}");
@@ -19137,6 +19140,8 @@ mod tests {
     minify_test(".foo { color: hwb(194 50% 0%) }", ".foo{color:#80e1ff}");
     minify_test(".foo { color: hwb(194 50 0) }", ".foo{color:#80e1ff}");
     minify_test(".foo { color: hwb(194 50% 50%) }", ".foo{color:gray}");
+    minify_test(".foo { color: hwb(calc(infinity) 20% 10%) }", ".foo{color:#e63333}");
+    minify_test(".foo { color: hwb(calc(-infinity) 20% 10%) }", ".foo{color:#e63333}");
     minify_test(".foo { color: light-dark(#FFF, #FFF) }", ".foo{color:#fff}");
     // minify_test(".foo { color: ActiveText }", ".foo{color:ActiveTet}");
     minify_test(
